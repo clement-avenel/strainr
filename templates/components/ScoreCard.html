@@ -1,0 +1,27 @@
+<div class="col-md-6 col-xl-3">
+    <div class="card card-sm">
+      <div class="card-body">
+        <div class="row align-items-center">
+          <div class="col-auto">
+           {% if type == "High" %}
+             <span class="bg-red text-white avatar"/>
+           {% elif type == "Medium" %}
+             <span class="bg-orange text-white avatar"/>
+           {% elif type == "Low" %}
+             <span class="bg-yellow text-white avatar"/>
+           {% else %}
+             <span class="bg-blue text-white avatar"/>
+           {% endif %}
+          </div>
+          <div class="col">
+            <div class="font-weight-medium">
+              {{ value }} {{ type }}
+            </div>
+            <div class="text-muted">
+               Risk alerts
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

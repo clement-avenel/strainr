@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta name="description" content="How much a strainer is your website ?"/>
+   <link rel="stylesheet" href="https://unpkg.com/@tabler/core@latest/dist/css/tabler.min.css">
+
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+   <script src="https://unpkg.com/@tabler/core@latest/dist/js/tabler.min.js"></script>
+
+   <link rel="manifest" href="../../static/assets/site.webmanifest">
+
+   <title>Strainr</title>
+ </head>
+ <body class="antialiased">
+  <div class="page">
+   {% include 'sections/Header.html' %}
+   <div class="page-content d-flex flex-fill max-w-full">
+    <div class="flex-fill px-lg-2 mw-100">
+     <div class="container my-4">
+      <div class="row">
+       <div class="col col-12">
+        <div class="card">
+         <div class="card-body">
+          <div class="row">
+           <div class="col-8">
+            <p>Website score for</p>
+            <h1>strainr.com</h1>
+           </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+     <div class="container my-4">
+      <div class="row">
+       <div class="col col-12">
+        <div class="card">
+         <div class="card-header">
+          <h3 class="card-title">Score</h3>
+         </div>
+         <div class="card-body">
+          <div class="row row-cards">
+           {% with type="High", value=2 %}
+           {% include 'components/ScoreCard.html' %}
+           {% endwith %}
+           {% with type="Medium", value=7 %}
+           {% include 'components/ScoreCard.html' %}
+           {% endwith %}
+           {% with type="Low", value=13 %}
+           {% include 'components/ScoreCard.html' %}
+           {% endwith %}
+           {% with type="Informational", value=57 %}
+           {% include 'components/ScoreCard.html' %}
+           {% endwith %}
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="container my-4">
+      <div class="row">
+       <div class="col col-12">
+        <div class="card mb-3">
+         <div class="card-header">
+           <h3 class="card-title">Alerts</h3>
+         </div>
+         <div class="list-group list-group-flush list-group-hoverable">
+          {% with type="High", value=2, name="Cross-Domain Misconfiguration", description="Web browser data loading may be possible, due to a Cross Origin Resource Sharing (CORS) misconfiguration on the web server" %}
+          {% include 'components/AlertItem.html' %}
+          {% endwith %}
+          {% with type="Medium", value=7, name="X-Frame-Options Header Not Set", description="X-Frame-Options header is not included in the HTTP response to protect against 'ClickJacking' attacks." %}
+          {% include 'components/AlertItem.html' %}
+          {% endwith %}
+          {% with type="Low", value=13, name="Cookie Without SameSite Attribute", description="A cookie has been set with an invalid SameSite attribute value, which means that the cookie can be sent as a result of a 'cross-site' request. The SameSite attribute is an effective counter measure to cross-site request forgery, cross-site script inclusion, and timing attacks." %}
+          {% include 'components/AlertItem.html' %}
+          {% endwith %}
+          {% with type="Informational", value=57, name="Cross-Domain JavaScript Source File Inclusion", description="The page includes one or more script files from a third-party domain." %}
+          {% include 'components/AlertItem.html' %}
+          {% endwith %}
+         </div>
+       </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  {% include 'sections/Footer.html' %}
+ </body>
+</html>

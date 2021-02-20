@@ -1,0 +1,24 @@
+<div class="list-group-item">
+  <div class="row align-items-center">
+    <div class="col-auto">
+     {% if type == "High" %}
+       <span class="badge bg-red"></span>
+     {% elif type == "Medium" %}
+       <span class="badge bg-orange"></span>
+     {% elif type == "Low" %}
+       <span class="badge bg-yellow"></span>
+     {% else %}
+       <span class="badge bg-blue"></span>
+     {% endif %}
+    </div>
+    <div class="col-auto">
+      <a href="#">
+        <span class="avatar">{{ value }}</span>
+      </a>
+    </div>
+    <div class="col text-truncate">
+      <a href="#" class="text-body d-block">{{ name }}</a>
+      <small class="d-block text-muted text-truncate mt-n1">{{ description }}</small>
+    </div>
+  </div>
+</div>
