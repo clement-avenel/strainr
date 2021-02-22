@@ -3,7 +3,7 @@
 # Strainr - How much your website is a strainer ?
 Strainr helps you to improve your website's security.
 
-## Pre-requisites
+## Prerequisite
 To use Strainr on localhost, it requires **Python3**.
 
 ## Installation
