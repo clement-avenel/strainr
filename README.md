@@ -1,4 +1,5 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fclement-avenel%2Fstrainr.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fclement-avenel%2Fstrainr?ref=badge_shield)
 
 # Strainr - How much your website is a strainer ?
 Strainr helps you to improve your website's security.
@@ -20,3 +21,7 @@ flask run
 - [@sweetpastabox](https://github.com/sweetpastabox)
 - [@FredericGodest](https://github.com/FredericGodest)
 - [@clement-avenel](https://github.com/clement-avenel)
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fclement-avenel%2Fstrainr.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fclement-avenel%2Fstrainr?ref=badge_large)
