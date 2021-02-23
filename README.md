@@ -5,7 +5,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/clement-avenel/strainr.svg?style=social&label=Star&maxAge=2592000)](https://github.com/clement-avenel/strainr/stargazers/)
 [![GitHub forks](https://img.shields.io/github/forks/clement-avenel/strainr.svg?style=social&label=Fork&maxAge=2592000)](https://GitHub.com/clement-avenel/strainr/network/)
 
-# Strainr - How much your website is a strainer ?
+# Strainr - How much of a strainer is your website ?
 Strainr helps you to improve your website's security.
 
 <img src="https://media.istockphoto.com/vectors/colander-vector-id165694164?k=6&m=165694164&s=612x612&w=0&h=U5wUzoyDBvelD8Z57ckIjaqReBLlsOpFbcMto_XLCl0=" alt="Strainr" width="250">
