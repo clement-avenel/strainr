@@ -1,0 +1,24 @@
+<div class="list-group-item">
+  <div class="row align-items-center">
+    <div class="col-auto">
+       {% if type  %}
+         <span class="badge bg-red"></span>
+       {% else %}
+         <span class="badge bg-blue"></span>
+       {% endif %}
+    </div>
+    <div class="col-auto">
+      <a href="#">
+        <span class="avatar"></span>
+      </a>
+    </div>
+    <div class="col text-truncate">
+      <a href="#" class="text-body d-block">{{ name }}</a>
+      {% if defined %}
+        <small class="d-block text-muted text-truncate mt-n1">{{ content }}</small>
+      {% else %}
+        <small class="d-block text-muted text-truncate mt-n1">Header {{ name }} is missing ...</small>
+      {% endif %}
+    </div>
+  </div>
+</div>

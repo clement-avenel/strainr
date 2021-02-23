@@ -1,0 +1,19 @@
+<div class="list-group-item">
+  <div class="row align-items-center">
+    <div class="col-auto">
+     {% if https_redirect %}
+       <span class="badge bg-blue"></span>
+     {% else %}
+       <span class="badge bg-red"></span>
+     {% endif %}
+    </div>
+    <div class="col-auto">
+      <a href="#">
+        <span class="avatar"></span>
+      </a>
+    </div>
+    <div class="col text-truncate">
+      <a href="#" class="text-body d-block">HTTPS redirect</a>
+    </div>
+  </div>
+</div>

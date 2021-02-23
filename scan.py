@@ -1,13 +1,11 @@
 import http.client
-import argparse
 import socket
 import ssl
-import sys
 import re
 
 from urllib.parse import urlparse
 
-class SecurityHeaders():
+class SecurityScan():
     def __init__(self):
         pass
 
