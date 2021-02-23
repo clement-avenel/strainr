@@ -10,8 +10,6 @@
 # How much of a strainer is your website ?
 Strainr helps you to improve your website's security.
 
-<img src="https://strainr.herokuapp.com/static/assets/strainer-l.svg" alt="website or strainer ?" width="250">
-
 ## Prerequisite
 To use Strainr on localhost, it requires **Python3**.
 
