@@ -1,15 +1,19 @@
 <div class="list-group-item">
   <div class="row align-items-center">
     <div class="col-auto">
-       {% if type  %}
+       {% if type == 3  %}
          <span class="badge bg-red"></span>
+       {% elif type == 2 %}
+         <span class="badge bg-orange"></span>
+       {% elif type == 1 %}
+         <span class="badge bg-yellow"></span>
        {% else %}
          <span class="badge bg-blue"></span>
        {% endif %}
     </div>
     <div class="col-auto">
       <a href="#">
-        <span class="avatar"></span>
+        <span class="avatar">1</span>
       </a>
     </div>
     <div class="col text-truncate">

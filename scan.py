@@ -10,55 +10,29 @@ class SecurityScan():
         pass
 
     def evaluate_warn(self, header, contents):
-        """ Risk evaluation function.
-        Set header warning flag (1/0) according to its contents.
-        Args:
-            header (str): HTTP header name in lower-case
-            contents (str): Header contents (value)
-        """
+        """ Risk evaluation function"""
         warn = 1
 
         if header == 'x-frame-options':
-            if contents.lower() in ['deny', 'sameorigin']:
-                warn = 0
-            else:
-                warn = 1
+            warn = 0 if contents.lower() in ['deny', 'sameorigin'] else 2
 
         if header == 'strict-transport-security':
             warn = 0
 
-        """ Evaluating the warn of CSP contents may be a bit more tricky.
-            For now, just disable the warn if the header is defined
-            """
         if header == 'content-security-policy':
             warn = 0
 
-        """ Raise the warn flag, if cross domain requests are allowed from any
-            origin """
         if header == 'access-control-allow-origin':
-            if contents == '*':
-                warn = 1
-            else:
-                warn = 0
+            warn = 2 if contents == '*' else 0
 
         if header.lower() == 'x-xss-protection':
-            if contents.lower() in ['1', '1; mode=block']:
-                warn = 0
-            else:
-                warn = 1
+            warn = 0 if contents.lower() in ['1', '1; mode=block'] else 1
 
         if header == 'x-content-type-options':
-            if contents.lower() == 'nosniff':
-                warn = 0
-            else:
-                warn =1
+            warn = 0 if contents.lower() == 'nosniff' else 1
 
-        """ Enable warning if backend version information is disclosed """
         if header == 'x-powered-by' or header == 'server':
-            if len(contents) > 1:
-                warn = 1
-            else:
-                warn = 0
+            warn = 1 if len(contents) > 1 else 0
 
         return {'defined': True, 'warn': warn, 'contents': contents}
 
@@ -98,7 +72,7 @@ class SecurityScan():
         hostname = parsed[1]
         path = parsed[2]
         if not protocol:
-            protocol = 'http' # default to http if protocl scheme not specified
+            protocol = 'http' # default to http if protocol scheme not specified
 
         if protocol == 'https' and follow_redirects != 5:
             return True
@@ -126,15 +100,11 @@ class SecurityScan():
     def check_headers(self, url, follow_redirects = 0):
         """ Make the HTTP request and check if any of the pre-defined
         headers exists.
-        Args:
-            url (str): Target URL in format: scheme://hostname/path/to/file
-            follow_redirects (Optional[str]): How deep we follow the redirects,
-            value 0 disables redirects.
         """
 
         """ Default return array """
         retval = {
-            'x-frame-options': {'defined': False, 'warn': 1, 'contents': '' },
+            'x-frame-options': {'defined': False, 'warn': 2, 'contents': '' },
             'strict-transport-security': {'defined': False, 'warn': 1, 'contents': ''},
             'access-control-allow-origin': {'defined': False, 'warn': 0, 'contents': ''},
             'content-security-policy': {'defined': False, 'warn': 1, 'contents': ''},

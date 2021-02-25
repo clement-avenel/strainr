@@ -28,5 +28,24 @@ def Report():
     headers = SecurityScan().check_headers(url)
     https = SecurityScan().test_https(url)
     https_redirect = SecurityScan().test_http_to_https(url, 5)
+    risk={'High': 0, 'Medium': 0, 'Low': 0, 'Info': 0}
 
-    return render_template('pages/Report.html', url=url, date=date, headers = headers, https=https, https_redirect=https_redirect )
+    for value in https.values():
+        if value == False:
+            risk['High']+=1
+
+    if https_redirect == False:
+        risk['High']+=1
+
+    for header, value in headers.items():
+        warn = value.get('warn')
+        if warn == 3:
+            risk['High']+=1
+        elif warn == 2:
+            risk['Medium']+=1
+        elif warn == 1:
+            risk['Low']+=1
+        else:
+            risk['Info']+=1
+
+    return render_template('pages/Report.html', url=url, date=date, risk=risk, headers = headers, https=https, https_redirect=https_redirect )
