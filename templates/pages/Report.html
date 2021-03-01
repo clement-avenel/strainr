@@ -64,7 +64,7 @@
        <div class="col col-12">
         <div class="card mb-3">
          <div class="card-header">
-           <h3 class="card-title">Alerts</h3>
+           <h3 class="card-title">Headers</h3>
          </div>
          <div class="list-group list-group-flush list-group-hoverable">
           {% for header, value in headers.items() %}
@@ -72,6 +72,19 @@
           {% include 'components/HeaderAlertItem.html' %}
           {% endwith %}
           {% endfor %}
+         </div>
+       </div>
+       </div>
+      </div>
+     </div>
+     <div class="container my-4">
+      <div class="row">
+       <div class="col col-12">
+        <div class="card mb-3">
+         <div class="card-header">
+           <h3 class="card-title">HTTPS</h3>
+         </div>
+         <div class="list-group list-group-flush list-group-hoverable">
           {% for https, value in https.items() %}
           {% with name=https, type=value %}
           {% include 'components/HTTPSAlertItem.html' %}

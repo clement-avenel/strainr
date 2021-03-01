@@ -12,7 +12,7 @@ This content is produced and maintained by the Strainr project.
 
 ## Trademarks
 
- Strainr is a trademark of Marin François and Clément Avenel.
+Strainr is a trademark of Marin François and Clément Avenel.
 
 ## Copyright
 

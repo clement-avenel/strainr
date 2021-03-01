@@ -48,4 +48,4 @@ def Report():
         else:
             risk['Info']+=1
 
-    return render_template('pages/Report.html', url=url, date=date, risk=risk, headers = headers, https=https, https_redirect=https_redirect )
+    return render_template('pages/Report.html', url=url, date=date, risk=risk, headers=headers, https=https, https_redirect=https_redirect )
